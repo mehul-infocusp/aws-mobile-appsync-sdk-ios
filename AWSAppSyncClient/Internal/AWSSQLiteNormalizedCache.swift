@@ -27,9 +27,9 @@ final class AWSSQLiteNormalizedCache: NormalizedCache {
 
     private let db: Connection
     private let records = Table(tableName)
-    private let id = Expression<Int64>("_id")
-    private let key = Expression<CacheKey>("key")
-    private let record = Expression<String>("record")
+	private let id = Expression<Int64>("_id")
+	private let key = Expression<CacheKey>(value: "key")
+	private let record = Expression<String>(value: "record")
 
     init(fileURL: URL) throws {
         AppSyncLog.verbose("Initializing normalized cache at \(fileURL.absoluteString)")
